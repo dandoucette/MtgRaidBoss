@@ -1,11 +1,11 @@
 1 - Annihilator {X} and at the beginning of each player`s upkeep, that player chooses either draw step, main phase, or combat phase. The player skips each instance of the chosen step or phase this turn.
-2,3 - Each opponent sacrifices 1 legendary permanent and {1+X} creatures.
+2,3 - Each opponent sacrifices 1 legendary permanent and {X+1} creatures.
 4,5 - The Raid Monster deals 15 damage to every player and 5 to every planeswalker.
 6,7 - The Raid Monster gains 15 life and removes all infect counters.
 8,9 - Until the beginning of the Monster`s next turn, players cannot draw more than 1 card or play more than one spell each turn.
 10,11 - Each opponent sacrifices all tokens and loses 1 life for each token sacrificed this way.
-12,13 - Place {2+X} {X}/{X} flying defender creature tokens in front of the Raid Monster.
-14,15 - Each opponent sacrifices {1+X} enchantment(s)
-16,17 - Each opponent sacrifices {1+X} Artifact(s)
-18,19 - Each opponent Discard 2 cards, Mill 2 cards, exiles their graveyard and drains {1+X} life.
+12,13 - Place {X+2} {X}/{X} flying defender creature tokens in front of the Raid Monster.
+14,15 - Each opponent sacrifices {X+1} enchantment(s)
+16,17 - Each opponent sacrifices {X+1} Artifact(s)
+18,19 - Each opponent Discard 2 cards, Mill 2 cards, exiles their graveyard and drains {X+1} life.
 20 - One player may immediately draw a card OR place a land from their hand into play OR gain 5 life.

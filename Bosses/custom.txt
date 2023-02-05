@@ -1,0 +1,20 @@
+1 - Annihilator {X/2}, players choose draw, main, or combat and skip all instances of that phase
+2 - Each player rolls a die, if you roll 3 or less sacrifice 1 legendary permanent or {X} creatures
+3 - Each player rolls a die, lowest roll(s) gets dealt {X*3} damage
+4 - Until next turn; players cannot draw more than 1 card and play more than 2 spells
+5 - Raid monster takes {X} less damage from every source
+6 - The Raid Monster gains 10 life and removes all infect counters
+7 - Raid monster deals 5 damage to one planeswalker controlled by each player
+8 - Raid monster summons {X+1} {X}/{X} flying defenders
+9 - Raid monster casts Earthquake for {X}, raid monster takes no damage
+10 - Each player rolls a die, lowest roller(s) sacrifice half their creatures, rounded up
+11 - All players sacrifice all tokens and lose 1 life per token
+12 - All players sacrifice {X} artifact(s)
+13 - All players exile half their graveyard(s) and and drains {X+1} life
+14 - Raid monster counters first spell cast by each player next turn
+15 - Each player rolls a die, lowest roll(s) sacrifice {X} enchantment(s)
+16 - If raid monster`s life is lower than half their starting life, double raid monster`s life
+17 - Raid monster takes no damage next turn
+18 - Players must pay 1 mana per creature attacking raid monster next turn
+19 - Each player must return {X/2} lands to their hand
+20 - Each player may draw a card OR place a land into play OR gain 5 life
