@@ -17,32 +17,50 @@ class Ability:
         self.dice = dice
         self.text = text
 
-#Load Boss File        
-file = open("Bosses\\Boss1.txt")
-abilities = []
+def loadFile(level):
+    #Load Boss File        
+    file = open("Bosses\\" + level + ".txt")
+    abilities = []
 
-for line in file.read().split("\n"):
-    parts = line.split(" - ")
-    dice = parts[0].split(",")
-    abilities.append(Ability(dice, parts[1]))
+    for line in file.read().split("\n"):
+        parts = line.split(" - ")
+        dice = parts[0].split(",")
+        abilities.append(Ability(dice, parts[1]))
 
-# for a in abilities:
-#     print(str(a.dice) + ": " + a.text)
+    return abilities
+
+
 players = ""
 while not players.isnumeric():
-    print("Starting new game, how many players?")
-    players = input()
+    players = input("Starting new game, how many players? ")
     if not players.isnumeric():
         print("please enter a valid number")
 
 players = int(players)
-bossLife = 20 * players
+
+response = ""
+abilities = []
+multiplier = 20
+while True:
+    response = input("What level do you want to play? (easy/medium/hard) ")
+    if response == "easy" or response == "medium" or response == "hard":
+        if response == "medium":
+            multiplier = 25
+        elif response == "hard":
+            multiplier = 50
+
+        abilities = loadFile(response)
+        break
+
+
+bossLife = multiplier * players
 print("Boss starting life total is " + str(bossLife))
+print("--------------------------------")
 
 response = ""
 turns = 1
 while response != "end":
-    log.green("------ Turn " + str(turns) + " boss life is " + str(bossLife) + "------")
+    log.green("------ Turn " + str(turns) + "------")
     if turns == 1:
         print("Boss does nothing")
     else:
@@ -74,19 +92,35 @@ while response != "end":
                         life = int(life.strip())
                         bossLife = bossLife + life
                     
+                    if "{XP}" in text:
+                        tokens = rolls * players
+                        text = text.replace("{XP}", str(tokens))
+                        
+                    addPattern = "\{\d\+X\}"
+                    match = re.search(addPattern, text)
+                    if match:
+                        placeholder = match.group()
+                        value = placeholder[1:2]
+                        value = int(value) + rolls
+                        text = re.sub(addPattern, str(value), text)
+                        
                     if "drains" in text:
-                        life = int(text[text.index("drains"):text.index["life"]].replace("drains ", "").strip())
+                        life = int(text[text.index("drains"):text.index("life")].replace("drains ", "").strip())
                         bossLife = bossLife + (life * players)
 
+                    
                     log.red(text)
                     break
 
+    log.white("Boss life = " + str(bossLife))
     print("Enter damage to the boss or type 'end' to end game and press enter")
     response = input()
     if response.isnumeric():
         bossLife = bossLife - int(response)
         if bossLife <= 0:
             log.green("******* You Win ********")
+            print("press enter to end program")
+            x = input()
             break
 
     turns = turns + 1

@@ -4,8 +4,8 @@
 6,7 - The Raid Monster gains 5 life and removes 5 infect counters
 8,9 - Until the beginning of the Monster`s next turn, players cannot draw more than 2 cards or play more than two spells each turn
 10,11 - Each player sacrifices half the number of tokens they control. (Except for the raid monster)
-12,13 - Place {X} per player {X}/{X} flying defender creature tokens in front of the Raid Monster
+12,13 - Place {XP}, {X}/{X} flying defender creature tokens in front of the Raid Monster
 14,15 - Each player sacrifices {X/2} enchantment(s)
 16,17 - Each player sacrifices {X/2} Artifact(s)
-18,19 - Each player exiles half their graveyard and drain {X} life
+18,19 - Each player exiles half their graveyard and drains {X} life
 20 - Each player may immediately draw a card, place a land from their hand into play, and gain 5 life
