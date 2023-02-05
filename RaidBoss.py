@@ -42,14 +42,18 @@ response = ""
 abilities = []
 multiplier = 20
 while True:
-    response = input("What level do you want to play? (easy/medium/hard) ")
-    if response == "easy" or response == "medium" or response == "hard":
-        if response == "medium":
+    response = input("What level do you want to play? (easy(e)/medium(m)/hard(h)) ")
+    if response == "e" or response == "m" or response == "h":
+        if response == "e":
+            file = "easy"
+        if response == "m":
+            file = "medium"
             multiplier = 25
-        elif response == "hard":
+        elif response == "h":
+            file = "hard"
             multiplier = 50
 
-        abilities = loadFile(response)
+        abilities = loadFile(file)
         break
 
 
@@ -59,8 +63,19 @@ print("--------------------------------")
 
 response = ""
 turns = 1
+log.white("Type 'end' at any time to end game")
 while response != "end":
     log.green("------ Turn " + str(turns) + "------")
+
+    response = input("Enter damage done to boss: ")
+    if response.isnumeric():
+        bossLife = bossLife - int(response)
+        if bossLife <= 0:
+            log.green("******* You Win ********")
+            print("press enter to end program")
+            x = input()
+            break
+
     if turns == 1:
         print("Boss does nothing")
     else:
@@ -113,14 +128,4 @@ while response != "end":
                     break
 
     log.white("Boss life = " + str(bossLife))
-    print("Enter damage to the boss or type 'end' to end game and press enter")
-    response = input()
-    if response.isnumeric():
-        bossLife = bossLife - int(response)
-        if bossLife <= 0:
-            log.green("******* You Win ********")
-            print("press enter to end program")
-            x = input()
-            break
-
     turns = turns + 1
